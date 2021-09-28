@@ -8,6 +8,7 @@ public class HitCaseShopApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HitCaseShopApplication.class, args);
+		System.out.println("Done");
 	}
 
 }
