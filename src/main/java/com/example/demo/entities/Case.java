@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="cases")
+
 public class Case {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
