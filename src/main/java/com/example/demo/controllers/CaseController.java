@@ -33,4 +33,11 @@ public List<Case> getAll(){
         return caseService.addCase(cases);
     }
 
+
+@GetMapping("/casesByDimension/{modelname}")
+public List<Case>  getAllMatchingCases(@PathVariable String modelname)
+        {
+            return caseService.getAllMatchingCases(modelname);
+        }
+
 }

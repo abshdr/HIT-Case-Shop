@@ -33,4 +33,9 @@ public class CaseService {
         return caseRepo.save(cases);
 
     }
+
+    public List<Case> getAllMatchingCases(String modelname) {
+        List<Case> caseList = caseRepo.getAllMatchingCases(modelname);
+        return caseList;
+    }
 }
