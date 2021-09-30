@@ -23,10 +23,9 @@ public class CaseService {
     }
 
 
-    public List<Case> getByModelname(String modelname) {
+    public List<Case> getByModelname(String modelname) {return caseRepo.getByModelname(modelname);}
 
-        return caseRepo.getByModelname(modelname);
-    }
+    public List<Case> getAllByDimensions(String dimensions) {return caseRepo.getAllByDimensions(dimensions);}
 
 
     public Case addCase(Case cases) {
@@ -34,8 +33,5 @@ public class CaseService {
 
     }
 
-    public List<Case> getAllMatchingCases(String modelname) {
-        List<Case> caseList = caseRepo.getAllMatchingCases(modelname);
-        return caseList;
-    }
+
 }

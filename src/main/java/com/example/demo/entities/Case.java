@@ -11,14 +11,16 @@ public class Case {
     private long id;
     private String manufacturer;
     private String modelname;
+    private String dimensions;
 
     public Case() {
     }
 
-    public Case(long id, String manufacturer, String modelname) {
+    public Case(long id, String manufacturer, String modelname, String dimensions) {
         this.id = id;
         this.manufacturer = manufacturer;
         this.modelname = modelname;
+        this.dimensions = dimensions;
     }
 
     public long getId() {
@@ -45,12 +47,21 @@ public class Case {
         this.modelname = modelname;
     }
 
+    public String getDimensions() {
+        return dimensions;
+    }
+
+    public void setDimensions(String dimensions) {
+        this.dimensions = dimensions;
+    }
+
     @Override
     public String toString() {
         return "Case{" +
                 "id=" + id +
                 ", manufacturer='" + manufacturer + '\'' +
                 ", modelname='" + modelname + '\'' +
+                ", dimensions='" + dimensions + '\'' +
                 '}';
     }
 }

@@ -26,6 +26,12 @@ public List<Case> getAll(){
         return caseService.getByModelname(modelname);
     }
 
+    @GetMapping("/casesByDimension/{dimensions}")
+    public List<Case>  getAllByDimensions(@PathVariable String dimensions)
+    {
+        return caseService.getAllByDimensions(dimensions);
+    }
+
 
 
     @PostMapping("/register/case")
@@ -34,10 +40,6 @@ public List<Case> getAll(){
     }
 
 
-@GetMapping("/casesByDimension/{modelname}")
-public List<Case>  getAllMatchingCases(@PathVariable String modelname)
-        {
-            return caseService.getAllMatchingCases(modelname);
-        }
+
 
 }
