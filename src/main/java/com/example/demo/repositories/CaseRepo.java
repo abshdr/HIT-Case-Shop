@@ -17,13 +17,11 @@ public interface CaseRepo extends JpaRepository<Case, Long> {
     List<Case> getAllByDimensions(String dimensions);
 
 
-/*
-    @Query(value = "SELECT "+
-                   "cases.manufacturer, cases.modelname "+
-                   "FROM cases INNER JOIN model "+
-                   "ON cases.dimensions= model.dimensions "+
-                    "WHERE model.name = ?1 ", nativeQuery = true)
-                    List<Case> getAllMatchingCases(String modelname);
-*/
+    @Query(value = "SELECT cases.id, cases.manufacturer, cases.modelname, cases.dimensions, model.name "+
+            "FROM cases INNER JOIN model "+
+            "ON cases.dimensions= model.dimensions "+
+            "WHERE model.name = ?1 ", nativeQuery = true)
+
+    List<Case> getCasesByName(String name);
 }
 

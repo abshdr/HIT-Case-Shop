@@ -4,8 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="cases")
-
-
+@SecondaryTable(name="model")
 public class Case {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,15 +12,17 @@ public class Case {
     private String manufacturer;
     private String modelname;
     private String dimensions;
+    @Embedded
+    private Name name;
 
-    public Case() {
-    }
+    public Case() {}
 
-    public Case(long id, String manufacturer, String modelname, String dimensions) {
+    public Case(long id, String manufacturer, String modelname, String dimensions, Name name) {
         this.id = id;
         this.manufacturer = manufacturer;
         this.modelname = modelname;
         this.dimensions = dimensions;
+        this.name = name;
     }
 
     public long getId() {
@@ -56,13 +57,44 @@ public class Case {
         this.dimensions = dimensions;
     }
 
+    public Name getName() {
+        return name;
+    }
+
+    public void setName(Name name) {
+        this.name = name;
+    }
+
     @Override
     public String toString() {
-        return "Case{" +
+        return "Dimension{" +
                 "id=" + id +
                 ", manufacturer='" + manufacturer + '\'' +
                 ", modelname='" + modelname + '\'' +
                 ", dimensions='" + dimensions + '\'' +
+                ", name=" + name +
                 '}';
     }
+}
+
+@Embeddable
+class Name{
+    @Column(name = "name", table ="model")
+    String name;
+
+    public Name() {
+    }
+
+    public Name(String name) {
+        name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void Name(String name) {
+        name = name;
+    }
+
 }

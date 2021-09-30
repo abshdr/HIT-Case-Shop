@@ -27,6 +27,11 @@ public class CaseService {
 
     public List<Case> getAllByDimensions(String dimensions) {return caseRepo.getAllByDimensions(dimensions);}
 
+    public List<Case> getCasesByName(String name) {
+        return caseRepo.getCasesByName(name);
+    }
+
+
 
     public Case addCase(Case cases) {
         return caseRepo.save(cases);
