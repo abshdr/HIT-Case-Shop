@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 
 @Service
@@ -33,4 +34,19 @@ return modelRepo.getByName(name);
         return modelRepo.save(model);
     }
 
+    public List<Model> getByPhrase(String phrase) {
+        List<Model> AllModels;
+        List<Model> phraseModels = new ArrayList<>();
+        AllModels = modelRepo.findAll();
+
+        for(Model model : AllModels){
+           if( model.getName().toLowerCase().contains(phrase.toLowerCase()))
+                {
+                    phraseModels.add(model);
+                }
+
+        }
+        return phraseModels;
+
+    }
 }

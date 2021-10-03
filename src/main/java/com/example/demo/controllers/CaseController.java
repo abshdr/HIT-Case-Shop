@@ -21,17 +21,13 @@ public List<Case> getAll(){
 }
 
 
-    @GetMapping("/casesBymodel/{modelname}")
+    @GetMapping("/casesBy/modelName/{modelname}")
     public List<Case> getByModelname(@PathVariable String modelname) {
         return caseService.getByModelname(modelname);
     }
 
-    @GetMapping("/casesByDimension/{dimensions}")
-    public List<Case>  getAllByDimensions(@PathVariable String dimensions)
-    {
-        return caseService.getAllByDimensions(dimensions);
-    }
-    @GetMapping("/rest/getCasesBymodelName/{name}")
+
+    @GetMapping("/casesBy/modelDimension/{name}")
     public List<Case> getCasesByName(@PathVariable String name){
         return caseService.getCasesByName(name);
     }

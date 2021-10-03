@@ -25,7 +25,6 @@ public class CaseService {
 
     public List<Case> getByModelname(String modelname) {return caseRepo.getByModelname(modelname);}
 
-    public List<Case> getAllByDimensions(String dimensions) {return caseRepo.getAllByDimensions(dimensions);}
 
     public List<Case> getCasesByName(String name) {
         return caseRepo.getCasesByName(name);

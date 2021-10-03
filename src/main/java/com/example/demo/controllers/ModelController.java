@@ -14,14 +14,19 @@ public class ModelController {
 
 
 
-    @GetMapping("/models/brand/{brandid}")
+    @GetMapping("/search/models/by/brand/{brandid}")
     public List<Model> getModelsByBrandId(@PathVariable long brandid) {
         return modelService.findModelsByBrandid(brandid);
     }
 
-    @GetMapping("models/brand/search/{name}")
+    @GetMapping("search/models/by/name/{name}")
     public List<Model> getByName(@PathVariable String name){
         return modelService.getByName(name);
+    }
+
+    @GetMapping("/search/model/by/phrase/{phrase}")
+    public List<Model> getByPhrase(@PathVariable String phrase){
+        return modelService.getByPhrase(phrase);
     }
 
 

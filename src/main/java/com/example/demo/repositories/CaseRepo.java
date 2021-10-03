@@ -14,9 +14,6 @@ public interface CaseRepo extends JpaRepository<Case, Long> {
 
     List<Case> getByModelname(String modelname);
 
-    List<Case> getAllByDimensions(String dimensions);
-
-
     @Query(value = "SELECT cases.id, cases.manufacturer, cases.modelname, cases.dimensions, model.name "+
             "FROM cases INNER JOIN model "+
             "ON cases.dimensions= model.dimensions "+
