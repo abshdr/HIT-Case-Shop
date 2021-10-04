@@ -1,11 +1,9 @@
 package com.example.demo.controllers;
-import com.example.demo.entities.Brand;
-import com.example.demo.entities.Case;
-import com.example.demo.entities.Model;
+import com.example.demo.entities.CaseEntity;
 import com.example.demo.services.CaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import com.example.demo.services.CaseService;
+
 import java.util.List;
 
 
@@ -15,27 +13,27 @@ public class CaseController {
 @Autowired
 private CaseService caseService;
 
-@GetMapping("/cases")
-public List<Case> getAll(){
-    return caseService.getAll();
-}
-
-
-    @GetMapping("/casesBy/modelName/{modelname}")
-    public List<Case> getByModelname(@PathVariable String modelname) {
-        return caseService.getByModelname(modelname);
+    @GetMapping("/getAllCases")
+    public List<CaseEntity> getAll(){
+        return caseService.getAll();
     }
 
 
-    @GetMapping("/casesBy/modelDimension/{name}")
-    public List<Case> getCasesByName(@PathVariable String name){
+    @GetMapping("/search/for/cases/by/modelName/{modelName}")
+    public List<CaseEntity> getByModelName(@PathVariable String modelName) {
+        return caseService.getByModelName(modelName);
+    }
+
+
+    @GetMapping("/search/for/cases/by/modelDimension/{name}")
+    public List<CaseEntity> getCasesByName(@PathVariable String name){
         return caseService.getCasesByName(name);
     }
 
 
 
     @PostMapping("/register/case")
-    public Case register(@RequestBody Case cases) {
+    public CaseEntity register(@RequestBody CaseEntity cases) {
         return caseService.addCase(cases);
     }
 

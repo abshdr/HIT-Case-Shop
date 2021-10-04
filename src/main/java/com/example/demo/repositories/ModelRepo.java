@@ -1,15 +1,15 @@
 package com.example.demo.repositories;
 
 
-import com.example.demo.entities.Model;
+import com.example.demo.entities.ModelEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface ModelRepo extends JpaRepository<Model, Long> {
-    List<Model> findModelsByBrandid(long brandid);
+public interface ModelRepo extends JpaRepository<ModelEntity, Long> {
+    List<ModelEntity> findByBrandId(long brandId);
 
-    List<Model> getByName(String name);
+    List<ModelEntity> getByName(String name);
 }
