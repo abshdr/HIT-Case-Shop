@@ -15,8 +15,10 @@ public interface CaseRepo extends JpaRepository<CaseEntity, Long> {
 
     @Query("SELECT caseEntity "+
             "FROM CaseEntity caseEntity INNER JOIN ModelEntity modelEntity "+
+           // " INNER JOIN BrandEntity brandEntity" +
             "ON caseEntity.dimensions = modelEntity.dimensions "+
-            "WHERE modelEntity.name = :name")
+           "WHERE caseEntity.brand_id = modelEntity.brand " +
+            "AND modelEntity.name = :name")
     List<CaseEntity> getCasesByName(String name);
 }
 

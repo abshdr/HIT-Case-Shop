@@ -15,6 +15,10 @@ public class CaseEntity {
     private long id;
     @Column(name = "manufacturer")
     private String manufacturer;
+    @Column(name = "model_id")
+    private long model_id;
+    @Column(name = "brand_id")
+    private long brand_id;
     @Column(name = "model_name")
     private String modelName;
     @Column(name = "dimensions")

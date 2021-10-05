@@ -26,6 +26,7 @@ public class CaseService {
 
 
     public List<CaseEntity> getCasesByName(String name) {
+
         return caseRepo.getCasesByName(name);
     }
 
