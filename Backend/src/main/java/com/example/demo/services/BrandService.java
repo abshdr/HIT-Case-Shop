@@ -1,7 +1,7 @@
 package com.example.demo.services;
 
 
-import com.example.demo.entities.Brand;
+import com.example.demo.entities.BrandEntity;
 import com.example.demo.repositories.BrandRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,9 +15,9 @@ public class BrandService {
     private BrandRepo brandRepo;
 
 
-    public List<Brand> getAll() {return brandRepo.findAll(); }
+    public List<BrandEntity> getAll() {return brandRepo.findAll(); }
 
-    public Brand addBrand(Brand brand) {
+    public BrandEntity addBrand(BrandEntity brand) {
         return brandRepo.save(brand);
     }
 }
