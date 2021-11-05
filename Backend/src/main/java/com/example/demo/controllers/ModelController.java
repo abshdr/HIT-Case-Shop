@@ -7,11 +7,16 @@ import java.util.List;
 
 
 @RestController
+@RequestMapping("/rest")
+
 public class ModelController {
     @Autowired
     private ModelService modelService;
 
-
+    @GetMapping("/getAllModels")
+    public List<ModelEntity> getAll() {
+        return modelService.getAll();
+    }
 
     @GetMapping("/search/models/by/brand/{brandid}")
     public List<ModelEntity> getModelsByBrandId(@PathVariable long brandid) {

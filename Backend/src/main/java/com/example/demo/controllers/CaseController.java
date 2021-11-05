@@ -9,6 +9,8 @@ import java.util.List;
 
 
 @RestController
+@RequestMapping("/rest")
+
 public class CaseController {
 @Autowired
 private CaseService caseService;

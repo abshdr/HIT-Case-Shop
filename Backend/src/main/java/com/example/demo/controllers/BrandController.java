@@ -7,6 +7,8 @@ import java.util.List;
 
 
 @RestController
+@RequestMapping("/rest")
+
 public class BrandController {
 @Autowired
 private BrandService brandService;

@@ -16,6 +16,10 @@ public class ModelService {
     @Autowired
     private ModelRepo modelRepo;
 
+    public List<ModelEntity> getAll() {
+        return modelRepo.findAll();
+    }
+
     public List<ModelEntity> findModelsByBrandid(long brandId) {
         return modelRepo.findByBrandId(brandId);
     }
